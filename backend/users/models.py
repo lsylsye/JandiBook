@@ -38,7 +38,7 @@ class User(AbstractUser):
         upload_to=profile_image_path,
         null=True,
         blank=True,
-        default='profiles/default_profile.png'
+        default='profiles/default_profile.jpg'
     )
     
 
