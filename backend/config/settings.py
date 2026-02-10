@@ -208,6 +208,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS (Vue 개발 환경 안정 설정)
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://jandibook.netlify.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
