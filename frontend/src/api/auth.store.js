@@ -1,7 +1,7 @@
 // src/api/auth.js
 import api from "@/api/axios";
 
-const ROOT = "http://127.0.0.1:8000"; 
+const ROOT = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000"; 
 
 export function loginApi(payload) {
   // payload: { username, password }

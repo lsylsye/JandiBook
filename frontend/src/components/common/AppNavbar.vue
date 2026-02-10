@@ -104,8 +104,9 @@ const profileSrc = computed(() => {
   // 백엔드가 full url 주면 그대로
   if (String(v).startsWith("http")) return v;
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
   // 상대경로로 오는 경우만 보정 (png/jpg 강제변환 ❌)
-  return `http://127.0.0.1:8000${String(v).startsWith("/") ? "" : "/"}${v}`;
+  return `${BASE_URL}${String(v).startsWith("/") ? "" : "/"}${v}`;
 });
 
 function toggleMenu() {

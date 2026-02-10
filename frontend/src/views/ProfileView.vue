@@ -22,10 +22,11 @@ const fetchProfile = async () => {
     }
 };
 
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
 const getProfileImage = (url) => {
     if (!url) return '';
     if (url.startsWith('http')) return url;
-    return `http://127.0.0.1:8000${url}`;
+    return `${BASE_URL}${url}`;
 };
 
 onMounted(fetchProfile);
