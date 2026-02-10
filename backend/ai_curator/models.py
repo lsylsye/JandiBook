@@ -28,7 +28,7 @@ class AIReviewAnalysis(models.Model):
     # 2. 작가 정보
     author_info = models.TextField(null=True, blank=True)     # 작가 소개
     author_works = models.JSONField(default=list)              # 대표작 리스트
-    author_image = models.URLField(null=True, blank=True)      # 작가 사진 URL
+    author_image = models.URLField(null=True, blank=True, max_length=500)      # 작가 사진 URL
     
     created_at = models.DateTimeField(auto_now_add=True)
 

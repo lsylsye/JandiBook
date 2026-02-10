@@ -209,6 +209,7 @@ pyobjc-framework-WebKit==12.1; sys_platform == "darwin"
 pyperclip==1.11.0
 PyRect==0.2.0
 PyScreeze==1.0.1
+PyMySQL==1.1.1
 python-dotenv==1.2.1
 pytweening==1.2.0
 pytz==2025.2
