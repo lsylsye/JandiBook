@@ -97,9 +97,11 @@ const levelLabel = computed(() => {
   return "숲";
 });
 
+const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
 const profileSrc = computed(() => {
   const v = mypage.me?.profile_image;
-  if (!v) return "https://via.placeholder.com/80";
+  if (!v) return DEFAULT_PROFILE_IMAGE;
+  if (String(v).includes("placeholder.com") || String(v).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
 
   // 백엔드가 full url 주면 그대로
   if (String(v).startsWith("http")) return v;
