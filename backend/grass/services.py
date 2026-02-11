@@ -1,7 +1,8 @@
-from datetime import timedelta
+from datetime import timedelta, date
 
 from django.db import transaction
 from django.utils import timezone
+from django.db.models.functions import ExtractYear
 
 from .models import GrassDaily
 
@@ -106,6 +107,25 @@ def get_grass_range(user, days=365, end_date=None):
         cur += timedelta(days=1)
 
     return out
+
+
+def get_grass_for_year(user, year):
+    """특정 연도 1월 1일 ~ 12월 31일 잔디 데이터 반환."""
+    start = date(year, 1, 1)
+    end = date(year, 12, 31)
+    return get_grass_range(user, days=(end - start).days + 1, end_date=end)
+
+
+def get_available_grass_years(user):
+    """해당 유저의 GrassDaily에 데이터가 있는 연도 목록 (내림차순)."""
+    years = (
+        GrassDaily.objects.filter(user=user)
+        .annotate(year=ExtractYear("date"))
+        .values_list("year", flat=True)
+        .distinct()
+        .order_by("-year")
+    )
+    return list(years)
 
 
 def get_level_payload(user):

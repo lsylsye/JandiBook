@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from .services import get_grass_range, get_level_payload
+from .services import get_grass_range, get_grass_for_year, get_available_grass_years, get_level_payload
 
 User = get_user_model()
 
@@ -14,13 +14,27 @@ class GrassMeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        # vue3-calendar-heatmap: endDate 주면 1년 자동 생성됨
-        # 우리는 values만 주면 되지만, 프론트 편하게 end_date도 같이 내려줌
+        # year 쿼리 있으면 해당 연도 1년치, 없으면 days 기준 (기본 365일)
+        year_param = request.query_params.get("year")
+        if year_param:
+            try:
+                year = int(year_param)
+                if year < 2000 or year > 2100:
+                    year = date.today().year
+            except (ValueError, TypeError):
+                year = date.today().year
+            items = get_grass_for_year(request.user, year)
+            return Response({
+                "user_id": request.user.id,
+                "year": year,
+                "end_date": date(year, 12, 31).isoformat(),
+                "values": [{"date": x["date"], "count": x["count"]} for x in items],
+                "legend": ["0", "1", "2", "3", "3+"],
+                "cap": 3,
+            })
         days = int(request.query_params.get("days", 365))
         days = max(1, min(days, 365))
-
         items = get_grass_range(request.user, days=days)
-
         return Response({
             "user_id": request.user.id,
             "days": days,
@@ -50,6 +64,15 @@ class GrassUserView(APIView):
             "legend": ["0", "1", "2", "3", "3+"],
             "cap": 3,
         })
+
+
+class GrassYearsMeView(APIView):
+    """내 잔디 데이터가 있는 연도 목록 (DB 기준)."""
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        years = get_available_grass_years(request.user)
+        return Response({"years": years})
 
 
 class LevelMeView(APIView):

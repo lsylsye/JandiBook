@@ -18,7 +18,7 @@
       "favorite_country": "JP",
       "other_country": "",
       "favorite_genre": "self_help",
-      "exp_total": 1604,
+      "exp_total": 1640,
       "profile_image": "profiles/default_profile.jpg",
       "groups": [],
       "user_permissions": []
@@ -19809,6 +19809,330 @@
     }
   },
   {
+    "model": "reviews.review",
+    "pk": 532,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "할매",
+      "book_author": "황석영",
+      "content": "2026년 새해 첫 읽기. 여운이 오래 남는 소설이에요.",
+      "isbn13": "9788936439880",
+      "publisher": "창비",
+      "pub_date": "2024-01-01",
+      "cover": "https://image.aladin.co.kr/product/37966/51/cover500/893643988x_1.jpg",
+      "rating": 5,
+      "created_at": "2026-01-01T14:00:00Z",
+      "updated_at": "2026-01-01T14:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 533,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "안녕이라 그랬어",
+      "book_author": "김애란",
+      "content": "겨울에 읽기 좋은 책. 감성적이고 따뜻해요.",
+      "isbn13": "9791141602376",
+      "publisher": "문학동네",
+      "pub_date": "2025-06-20",
+      "cover": "https://image.aladin.co.kr/product/36566/52/cover500/k462039240_2.jpg",
+      "rating": 4,
+      "created_at": "2026-01-03T10:30:00Z",
+      "updated_at": "2026-01-03T10:30:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 534,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "절창",
+      "book_author": "구병모",
+      "content": "구병모 작가님 글은 언제 읽어도 좋네요. 강추합니다.",
+      "isbn13": "9791141602451",
+      "publisher": "문학동네",
+      "pub_date": "2025-09-17",
+      "cover": "https://image.aladin.co.kr/product/37172/36/cover500/k662031678_3.jpg",
+      "rating": 5,
+      "created_at": "2026-01-05T19:00:00Z",
+      "updated_at": "2026-01-05T19:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 535,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "괴테는 모든 것을 말했다",
+      "book_author": "스즈키 유이",
+      "content": "일본 문학 좋아하시면 추천. 읽는 내내 몰입했어요.",
+      "isbn13": "9791194530701",
+      "publisher": "리프",
+      "pub_date": "2025-11-18",
+      "cover": "https://image.aladin.co.kr/product/37676/59/cover500/k212032349_2.jpg",
+      "rating": 4,
+      "created_at": "2026-01-07T11:00:00Z",
+      "updated_at": "2026-01-07T11:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 536,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "삼체 X : 관상지주",
+      "book_author": "바오수",
+      "content": "SF 팬이라면 꼭 읽어보세요. 스케일이 정말 크네요.",
+      "isbn13": "9791193904619",
+      "publisher": "서삼독",
+      "pub_date": "2025-12-24",
+      "cover": "https://image.aladin.co.kr/product/37709/51/cover500/k682033066_1.jpg",
+      "rating": 5,
+      "created_at": "2026-01-08T16:20:00Z",
+      "updated_at": "2026-01-08T16:20:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 537,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "기차의 꿈",
+      "book_author": "데니스 존슨",
+      "content": "몇 번을 읽어도 새로워요. 명작입니다.",
+      "isbn13": "9791130672656",
+      "publisher": "다산책방",
+      "pub_date": "2025-12-10",
+      "cover": "https://image.aladin.co.kr/product/37710/61/cover500/k402033169_3.jpg",
+      "rating": 5,
+      "created_at": "2026-01-10T09:15:00Z",
+      "updated_at": "2026-01-10T09:15:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 538,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "할매",
+      "book_author": "황석영",
+      "content": "다시 읽어보니 다른 감동이 있네요.",
+      "isbn13": "9788936439880",
+      "publisher": "창비",
+      "pub_date": "2024-01-01",
+      "cover": "https://image.aladin.co.kr/product/37966/51/cover500/893643988x_1.jpg",
+      "rating": 4,
+      "created_at": "2026-01-12T20:00:00Z",
+      "updated_at": "2026-01-12T20:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 539,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "안녕이라 그랬어",
+      "book_author": "김애란",
+      "content": "친구에게 선물로 추천하고 싶은 책.",
+      "isbn13": "9791141602376",
+      "publisher": "문학동네",
+      "pub_date": "2025-06-20",
+      "cover": "https://image.aladin.co.kr/product/36566/52/cover500/k462039240_2.jpg",
+      "rating": 5,
+      "created_at": "2026-01-15T13:45:00Z",
+      "updated_at": "2026-01-15T13:45:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 540,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "절창",
+      "book_author": "구병모",
+      "content": "올해 목표 중 하나가 구병모 작가 전작 읽기예요.",
+      "isbn13": "9791141602451",
+      "publisher": "문학동네",
+      "pub_date": "2025-09-17",
+      "cover": "https://image.aladin.co.kr/product/37172/36/cover500/k662031678_3.jpg",
+      "rating": 4,
+      "created_at": "2026-01-18T18:00:00Z",
+      "updated_at": "2026-01-18T18:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 541,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "괴테는 모든 것을 말했다",
+      "book_author": "스즈키 유이",
+      "content": "아쿠타가와상 수상작답게 완성도가 높아요.",
+      "isbn13": "9791194530701",
+      "publisher": "리프",
+      "pub_date": "2025-11-18",
+      "cover": "https://image.aladin.co.kr/product/37676/59/cover500/k212032349_2.jpg",
+      "rating": 5,
+      "created_at": "2026-01-20T10:00:00Z",
+      "updated_at": "2026-01-20T10:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 542,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "삼체 X : 관상지주",
+      "book_author": "바오수",
+      "content": "시리즈 정주행 중. 다음 권이 기대돼요.",
+      "isbn13": "9791193904619",
+      "publisher": "서삼독",
+      "pub_date": "2025-12-24",
+      "cover": "https://image.aladin.co.kr/product/37709/51/cover500/k682033066_1.jpg",
+      "rating": 4,
+      "created_at": "2026-01-22T14:30:00Z",
+      "updated_at": "2026-01-22T14:30:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 543,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "기차의 꿈",
+      "book_author": "데니스 존슨",
+      "content": "짧지만 강렬한 인상. 단편집도 찾아볼 예정.",
+      "isbn13": "9791130672656",
+      "publisher": "다산책방",
+      "pub_date": "2025-12-10",
+      "cover": "https://image.aladin.co.kr/product/37710/61/cover500/k402033169_3.jpg",
+      "rating": 5,
+      "created_at": "2026-01-25T11:00:00Z",
+      "updated_at": "2026-01-25T11:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 544,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "할매",
+      "book_author": "황석영",
+      "content": "1월 마지막 주 독서. 올해도 꾸준히 읽어야지.",
+      "isbn13": "9788936439880",
+      "publisher": "창비",
+      "pub_date": "2024-01-01",
+      "cover": "https://image.aladin.co.kr/product/37966/51/cover500/893643988x_1.jpg",
+      "rating": 4,
+      "created_at": "2026-01-28T20:15:00Z",
+      "updated_at": "2026-01-28T20:15:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 545,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "안녕이라 그랬어",
+      "book_author": "김애란",
+      "content": "2월 첫 읽기. 문학동네 책은 믿고 읽어요.",
+      "isbn13": "9791141602376",
+      "publisher": "문학동네",
+      "pub_date": "2025-06-20",
+      "cover": "https://image.aladin.co.kr/product/36566/52/cover500/k462039240_2.jpg",
+      "rating": 5,
+      "created_at": "2026-02-01T09:00:00Z",
+      "updated_at": "2026-02-01T09:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 546,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "절창",
+      "book_author": "구병모",
+      "content": "추운 날 따뜻한 차 마시며 읽기 좋아요.",
+      "isbn13": "9791141602451",
+      "publisher": "문학동네",
+      "pub_date": "2025-09-17",
+      "cover": "https://image.aladin.co.kr/product/37172/36/cover500/k662031678_3.jpg",
+      "rating": 4,
+      "created_at": "2026-02-03T15:00:00Z",
+      "updated_at": "2026-02-03T15:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 547,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "괴테는 모든 것을 말했다",
+      "book_author": "스즈키 유이",
+      "content": "일본 문학 특유의 여백과 여운이 좋아요.",
+      "isbn13": "9791194530701",
+      "publisher": "리프",
+      "pub_date": "2025-11-18",
+      "cover": "https://image.aladin.co.kr/product/37676/59/cover500/k212032349_2.jpg",
+      "rating": 5,
+      "created_at": "2026-02-05T12:20:00Z",
+      "updated_at": "2026-02-05T12:20:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 548,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "삼체 X : 관상지주",
+      "book_author": "바오수",
+      "content": "SF 덕후라면 필독. 삼체 시리즈 강추.",
+      "isbn13": "9791193904619",
+      "publisher": "서삼독",
+      "pub_date": "2025-12-24",
+      "cover": "https://image.aladin.co.kr/product/37709/51/cover500/k682033066_1.jpg",
+      "rating": 5,
+      "created_at": "2026-02-07T17:00:00Z",
+      "updated_at": "2026-02-07T17:00:00Z"
+    }
+  },
+  {
+    "model": "reviews.review",
+    "pk": 549,
+    "fields": {
+      "board": 2,
+      "user": 1,
+      "book_title": "기차의 꿈",
+      "book_author": "데니스 존슨",
+      "content": "2월 10일까지 올해 꾸준히 읽고 있어요. 다음 책도 기대.",
+      "isbn13": "9791130672656",
+      "publisher": "다산책방",
+      "pub_date": "2025-12-10",
+      "cover": "https://image.aladin.co.kr/product/37710/61/cover500/k402033169_3.jpg",
+      "rating": 4,
+      "created_at": "2026-02-10T10:00:00Z",
+      "updated_at": "2026-02-10T10:00:00Z"
+    }
+  },
+  {
     "model": "sessions.session",
     "pk": "7kgmhlwsj98zqwgnhb1n7bq7fueuskm1",
     "fields": {
@@ -21180,6 +21504,186 @@
       "date": "2025-12-23",
       "points": 1,
       "updated_at": "2025-12-23T12:00:00Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 550,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-01",
+      "points": 1,
+      "updated_at": "2026-01-01T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 551,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-03",
+      "points": 1,
+      "updated_at": "2026-01-03T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 552,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-05",
+      "points": 1,
+      "updated_at": "2026-01-05T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 553,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-07",
+      "points": 1,
+      "updated_at": "2026-01-07T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 554,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-08",
+      "points": 1,
+      "updated_at": "2026-01-08T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 555,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-10",
+      "points": 1,
+      "updated_at": "2026-01-10T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 556,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-12",
+      "points": 1,
+      "updated_at": "2026-01-12T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 557,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-15",
+      "points": 1,
+      "updated_at": "2026-01-15T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 558,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-18",
+      "points": 1,
+      "updated_at": "2026-01-18T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 559,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-20",
+      "points": 1,
+      "updated_at": "2026-01-20T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 560,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-22",
+      "points": 1,
+      "updated_at": "2026-01-22T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 561,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-25",
+      "points": 1,
+      "updated_at": "2026-01-25T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 562,
+    "fields": {
+      "user": 1,
+      "date": "2026-01-28",
+      "points": 1,
+      "updated_at": "2026-01-28T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 563,
+    "fields": {
+      "user": 1,
+      "date": "2026-02-01",
+      "points": 1,
+      "updated_at": "2026-02-01T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 564,
+    "fields": {
+      "user": 1,
+      "date": "2026-02-03",
+      "points": 1,
+      "updated_at": "2026-02-03T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 565,
+    "fields": {
+      "user": 1,
+      "date": "2026-02-05",
+      "points": 1,
+      "updated_at": "2026-02-05T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 566,
+    "fields": {
+      "user": 1,
+      "date": "2026-02-07",
+      "points": 1,
+      "updated_at": "2026-02-07T23:59:59Z"
+    }
+  },
+  {
+    "model": "grass.grassdaily",
+    "pk": 567,
+    "fields": {
+      "user": 1,
+      "date": "2026-02-10",
+      "points": 1,
+      "updated_at": "2026-02-10T23:59:59Z"
     }
   }
 ]
