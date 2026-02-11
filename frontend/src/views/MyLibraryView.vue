@@ -69,6 +69,19 @@
               <button class="nav-btn small" @click="prevGrassMonth">◀</button>
               <button class="nav-btn small" @click="nextGrassMonth">▶</button>
             </div>
+            <div class="grass-nav grass-year-select" v-else-if="grassType === 'year'">
+              <select
+                v-model.number="grassViewYear"
+                class="year-select"
+                @change="onGrassYearChange"
+              >
+                <option
+                  v-for="y in grassAvailableYears"
+                  :key="y"
+                  :value="y"
+                >{{ y }}년</option>
+              </select>
+            </div>
           </div>
 
           <div class="grass-wrap" :class="grassType">
@@ -314,7 +327,9 @@ const grassMax = ref(3);
 const grassType = ref('month'); // 'month' | 'year'
 
 const grassViewYear = ref(new Date().getFullYear());
-const grassViewMonth = ref(new Date().getMonth()); 
+const grassViewMonth = ref(new Date().getMonth());
+/** 연도 select: 2025년, 2026년만 표시 */
+const grassAvailableYears = computed(() => [2026, 2025]); 
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -439,6 +454,30 @@ const nextGrassMonth = () => {
     grassViewMonth.value++;
   }
 };
+
+/** 연도 선택 변경 시 해당 연도 잔디 데이터 로드 */
+const onGrassYearChange = async () => {
+  loading.value = true;
+  try {
+    const grassRes = await getMyGrass({ year: grassViewYear.value });
+    grassMax.value = grassRes.data?.cap ?? 3;
+    grassValues.value = (grassRes.data?.values || []).map(v => ({
+      date: v.date,
+      points: v.count
+    }));
+  } catch (e) {
+    console.error(e);
+  } finally {
+    loading.value = false;
+  }
+};
+
+watch(grassType, (newVal) => {
+  if (newVal === 'year') {
+    if (![2025, 2026].includes(grassViewYear.value)) grassViewYear.value = 2026;
+    onGrassYearChange();
+  }
+});
 
 // 캘린더 관련
 const now = new Date();
@@ -780,7 +819,12 @@ const setFeaturedReview = async (rev) => {
 }
 .grass-type-tabs button.active { background: white; color: #191f28; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
 
-.grass-nav { display: flex; gap: 8px; }
+.grass-nav { display: flex; gap: 8px; align-items: center; }
+.grass-year-select .year-select {
+  padding: 6px 12px; border-radius: 8px; border: 1px solid #e5e8eb;
+  font-size: 0.9rem; font-weight: 600; color: #191f28; background: white;
+  cursor: pointer; min-width: 90px;
+}
 .nav-btn.small {
   width: 28px; height: 28px; font-size: 0.8rem;
   padding: 0; display: flex; align-items: center; justify-content: center;
