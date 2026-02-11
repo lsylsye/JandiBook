@@ -7,6 +7,7 @@ import { useCommunityStore } from "@/stores/community.store";
 import { useUiStore } from "@/stores/ui.store";
 import { meApi } from '@/api/auth.store';
 import { Heart, MessageCircle, Reply, Trash2, SendHorizontal, MoreHorizontal } from 'lucide-vue-next';
+import { resolveProfileImage } from '@/utils/profileImage';
 
 const route = useRoute();
 const router = useRouter();
@@ -206,15 +207,7 @@ const submitComment = async () => {
     }
 };
 
-// Helper for Profile Image
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
-const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
-const getProfileImage = (url) => {
-    if (!url) return DEFAULT_PROFILE_IMAGE;
-    if (String(url).includes("placeholder.com") || String(url).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
-    if (url.startsWith('http')) return url;
-    return `${BASE_URL}${url}`;
-};
+const getProfileImage = (url) => resolveProfileImage(url);
 
 const goProfile = (userId) => {
     if (!userId) return;

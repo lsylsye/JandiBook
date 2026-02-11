@@ -292,6 +292,7 @@ import { getMyReviews, getTodayReviews, setRepresentativeReview } from '@/api/re
 import { getMyGrass, getMyLevel, syncTodayGrass } from '@/api/grass';
 import { getMyBookmarks } from '@/api/mypage';
 import { User, Check, Heart, MessageCircle, Share2, MoreHorizontal, Send } from 'lucide-vue-next';
+import { resolveProfileImage } from '@/utils/profileImage';
 
 const router = useRouter();
 const authStore = useAuthStore();
@@ -514,16 +515,8 @@ onMounted(async () => {
   }
 });
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
-const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
-const getAbsoluteUrl = (url) => {
-  if (!url) return DEFAULT_PROFILE_IMAGE;
-  if (String(url).includes("placeholder.com") || String(url).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
-  if (url.startsWith('http')) return url;
-  return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
-};
-
-const getProfileImage = (url) => getAbsoluteUrl(url);
+const getAbsoluteUrl = (url) => resolveProfileImage(url);
+const getProfileImage = (url) => resolveProfileImage(url);
 
 const goBookDetail = (isbn13) => {
   if (!isbn13) return;

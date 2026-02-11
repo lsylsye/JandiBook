@@ -23,6 +23,7 @@ import {
   SendHorizontal,
   MoreHorizontal
 } from 'lucide-vue-next';
+import { resolveProfileImage } from '@/utils/profileImage';
 
 const route = useRoute();
 const router = useRouter();
@@ -189,14 +190,7 @@ const handleUpdateReview = async () => {
     }
 };
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
-const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
-const getAbsoluteUrl = (url) => {
-    if (!url) return DEFAULT_PROFILE_IMAGE;
-    if (String(url).includes("placeholder.com") || String(url).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
-    if (url.startsWith('http')) return url;
-    return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
-};
+const getAbsoluteUrl = (url) => resolveProfileImage(url);
 
 const fromNow = (iso) => {
     if (!iso) return '';

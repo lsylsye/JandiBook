@@ -51,6 +51,7 @@ import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { getReviews } from '@/api/review';
 import { User, Star } from 'lucide-vue-next';
+import { resolveProfileImage } from '@/utils/profileImage';
 
 const router = useRouter();
 const reviews = ref([]);
@@ -71,14 +72,7 @@ function goReviewDetail(id) {
   if (id) router.push(`/reviews/${id}`);
 }
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
-const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
-const getProfileImage = (url) => {
-  if (!url) return DEFAULT_PROFILE_IMAGE;
-  if (String(url).includes("placeholder.com") || String(url).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
-  if (url.startsWith('http')) return url;
-  return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
-};
+const getProfileImage = (url) => resolveProfileImage(url);
 
 const fromNow = (dateStr) => {
   if (!dateStr) return '';

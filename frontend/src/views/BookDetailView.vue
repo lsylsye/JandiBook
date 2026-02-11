@@ -154,6 +154,7 @@ import { computed, onMounted, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import api from "@/api/axios";
 import { Star, User, Bookmark, PenLine } from "lucide-vue-next";
+import { resolveProfileImage } from "@/utils/profileImage";
 
 const route = useRoute();
 const router = useRouter();
@@ -316,15 +317,7 @@ async function toggleBookmark() {
   }
 }
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
-const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
-const getProfileImage = (url) => {
-  if (!url) return DEFAULT_PROFILE_IMAGE;
-  if (String(url).includes("placeholder.com") || String(url).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
-  if (url.startsWith('http')) return url;
-  const path = String(url).startsWith("/") ? url : `/${url}`;
-  return `${BASE_URL}${path}`;
-};
+const getProfileImage = (url) => resolveProfileImage(url);
 
 const formatDate = (dateStr) => {
   if (!dateStr) return '';

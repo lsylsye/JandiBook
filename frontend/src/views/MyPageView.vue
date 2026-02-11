@@ -3,12 +3,7 @@ import { ref, onMounted, computed, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { getMyProfile, getUserProfile, updateMyProfile, toggleFollow, getFollowers, getFollowing } from "@/api/mypage";
 import { useMypageStore } from "@/stores/mypage.store";
-
-const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
-function safeProfileImage(url) {
-  if (!url || String(url).includes("placeholder.com") || String(url).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
-  return url;
-}
+import { resolveProfileImage } from "@/utils/profileImage";
 
 const mypageStore = useMypageStore();
 
@@ -243,7 +238,7 @@ function goToUserProfile(userId) {
         <div class="card profile-card">
           <div class="profile-compact">
             <img 
-              :src="safeProfileImage(profile.profile_image)" 
+              :src="resolveProfileImage(profile.profile_image)" 
               class="avatar" 
               :alt="profile.nickname" 
             />
@@ -467,7 +462,7 @@ function goToUserProfile(userId) {
             class="follow-item"
           >
             <img 
-              :src="safeProfileImage(user.profile_image)" 
+              :src="resolveProfileImage(user.profile_image)" 
               class="follow-avatar"
               @click="goToUserProfile(user.id)"
             />

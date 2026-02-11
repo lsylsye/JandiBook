@@ -74,6 +74,7 @@ import { useAuthStore } from "@/stores/auth.store";      // ✅ Pinia auth 단�
 import { useMypageStore } from "@/stores/mypage.store";  // ✅ level/profile 단일 소스(/api/mypage/me/)
 import SearchCapsule from "@/components/ui/SearchCapsule.vue";
 import { PenLine } from "lucide-vue-next";
+import { resolveProfileImage } from "@/utils/profileImage";
 
 const router = useRouter();
 const auth = useAuthStore();
@@ -97,19 +98,7 @@ const levelLabel = computed(() => {
   return "숲";
 });
 
-const DEFAULT_PROFILE_IMAGE = "https://jandibook.up.railway.app/media/profiles/default_profile.jpg";
-const profileSrc = computed(() => {
-  const v = mypage.me?.profile_image;
-  if (!v) return DEFAULT_PROFILE_IMAGE;
-  if (String(v).includes("placeholder.com") || String(v).includes("via.placeholder")) return DEFAULT_PROFILE_IMAGE;
-
-  // 백엔드가 full url 주면 그대로
-  if (String(v).startsWith("http")) return v;
-
-  const BASE_URL = import.meta.env.VITE_BASE_URL || "http://127.0.0.1:8000";
-  // 상대경로로 오는 경우만 보정 (png/jpg 강제변환 ❌)
-  return `${BASE_URL}${String(v).startsWith("/") ? "" : "/"}${v}`;
-});
+const profileSrc = computed(() => resolveProfileImage(mypage.me?.profile_image));
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value;
