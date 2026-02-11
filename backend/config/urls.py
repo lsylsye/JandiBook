@@ -20,6 +20,8 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 
+from config.views import default_profile_image_redirect
+
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -32,7 +34,8 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    
+    # S3 사용 시 기본 프로필 이미지 → 버킷 리다이렉트 (404 방지)
+    path("media/profiles/default_profile.jpg", default_profile_image_redirect),
     # auth
     path('admin/', admin.site.urls),
     path('accounts/', include("dj_rest_auth.urls")), 

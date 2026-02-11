@@ -228,6 +228,7 @@ if USE_S3:
         },
     }
     MEDIA_URL = f"{AWS_S3_ENDPOINT_URL.rstrip('/')}/{AWS_STORAGE_BUCKET_NAME}/media/"
+    MEDIA_ROOT = BASE_DIR / "media"  # urls.py static() 호출 시 필요 (실제 서빙은 S3)
 else:
     MEDIA_URL = "/media/"
     MEDIA_ROOT = BASE_DIR / "media"
