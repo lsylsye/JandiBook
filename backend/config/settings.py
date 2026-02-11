@@ -36,6 +36,9 @@ ALLOWED_HOSTS = [
     'jandibook.up.railway.app',
 ]
 
+# Railway 등 프록시 뒤에서 HTTPS로 들어올 때 (Mixed Content 방지)
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 
 # Application definition
 
