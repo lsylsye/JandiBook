@@ -227,4 +227,10 @@
 
 ---
 
+## 🗣 발표 자료
+- [시연 영상](https://drive.google.com/file/d/1oJL3UAwQ7dT-5V96IPqps2y3rCF6-1s9/view?usp=sharing)
+- [발표 PPT](https://drive.google.com/file/d/1DIhXoCfH0zdyMQLN_tRX9AHV5CvyLBKG/view?usp=sharing)
+
+---
+
 잔디북(JandiBook) 🌱📚
